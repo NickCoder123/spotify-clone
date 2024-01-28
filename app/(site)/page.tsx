@@ -1,5 +1,5 @@
 import Header from "@/components/header";
-import ListItem from "@/components/listitem";
+import ListItem from "@/components/list_item";
 
 export default function Home() {
   return (

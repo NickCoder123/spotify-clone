@@ -6,7 +6,7 @@ import { useMemo } from "react";
 import { Home, Search } from "lucide-react";
 
 import Box from "@/components/box";
-import SidebarItem from "@/components/sidebaritem";
+import SidebarItem from "@/components/sidebar_item";
 import Library from "@/components/library";
 
 interface SidebarProps {
