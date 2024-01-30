@@ -4,7 +4,8 @@ import { useRouter } from "next/navigation";
 import { twMerge } from "tailwind-merge";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
-import { ArrowLeft, ArrowRight, Home, Search, UserCog } from "lucide-react";
+import { RxCaretLeft, RxCaretRight } from "react-icons/rx";
+import { Home, Search, UserCog } from "lucide-react";
 import toast from "react-hot-toast";
 
 import useAuthModal from "@/hooks/useAuthModal";
@@ -46,15 +47,15 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
         <div className="hidden md:flex gap-x-2 items-center">
           <button
             onClick={() => router.back()}
-            className="rounded-lg bg-black flex items-center justify-center hover:opacity-75 transition"
+            className="rounded-full bg-black flex items-center justify-center hover:opacity-75 transition"
           >
-            <ArrowLeft size={30} className="text-white" />
+            <RxCaretLeft size={30} className="text-white" />
           </button>
           <button
             onClick={() => router.forward()}
-            className="rounded-lg bg-black flex items-center justify-center hover:opacity-75 transition"
+            className="rounded-full bg-black flex items-center justify-center hover:opacity-75 transition"
           >
-            <ArrowRight size={30} className="text-white" />
+            <RxCaretRight size={30} className="text-white" />
           </button>
         </div>
         <div className="flex md:hidden gap-x-2 items-center">
