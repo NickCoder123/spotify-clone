@@ -2,9 +2,11 @@
 
 import { usePathname } from "next/navigation";
 import { useMemo } from "react";
+import { twMerge } from "tailwind-merge";
 
 import { Home, Search } from "lucide-react";
 import { Song } from "@/types";
+import usePlayer from "@/hooks/usePlayer";
 
 import Box from "@/components/box";
 import SidebarItem from "@/components/sidebar_item";
@@ -17,6 +19,7 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ children, songs }) => {
   const pathname = usePathname();
+  const player = usePlayer();
 
   const routes = useMemo(
     () => [
@@ -37,7 +40,12 @@ const Sidebar: React.FC<SidebarProps> = ({ children, songs }) => {
   );
 
   return (
-    <div className="flex h-full">
+    <div
+      className={twMerge(
+        `flex h-full`,
+        player.activeId && "h-[calc(100%-80px)]"
+      )}
+    >
       <div className="hidden md:flex flex-col gap-y-2 bg-black h-full w-[300px] p-2">
         <Box>
           <div className="flex flex-col gap-y-4 px-5 py-4">
